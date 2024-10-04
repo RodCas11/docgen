@@ -1,0 +1,26 @@
+{
+  "name": "docgen",
+  "version": "1.1.0",
+  "description": "Ferramenta de Documentação Automatizada",
+  "main": "src/cli.js",
+  "bin": {
+    "docgen": "./src/cli.js"
+  },
+  "scripts": {
+    "start": "node src/cli.js",
+    "test": "jest",
+    "lint": "eslint src/**/*.js",
+    "format": "prettier --write src/**/*.js",
+    "generate-docs": "docgen generate ./src -o ./docs -f markdown"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^12.1.0",
+    "ejs": "^3.1.10",
+    "esprima": "^4.0.1",
+    "glob": "^7.2.3",
+    "markdown-it": "^14.1.0"
+  }
+}

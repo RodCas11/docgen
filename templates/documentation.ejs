@@ -1,0 +1,27 @@
+<!-- templates/documentation.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Documentação Automatizada</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h1 { text-align: center; }
+        h2 { color: #2c3e50; }
+        pre { background: #ecf0f1; padding: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Documentação Automatizada</h1>
+    <% functions.forEach(function(func) { %>
+        <h2><%= func.name %></h2>
+        <% if (func.jsdoc.length > 0) { %>
+            <% func.jsdoc.forEach(function(doc) { %>
+                <p><%= doc.replace(/\*\//g, '').replace(/\/\*\*/g, '').trim().replace(/\n/g, '<br>') %></p>
+            <% }); %>
+        <% } else { %>
+            <p><em>Sem documentação disponível.</em></p>
+        <% } %>
+    <% }); %>
+</body>
+</html>
